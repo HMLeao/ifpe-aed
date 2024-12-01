@@ -1,0 +1,1 @@
+# Práticas da disciplina de Algorítmos e estruturas de dados
