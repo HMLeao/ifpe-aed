@@ -4,6 +4,8 @@
 #include "arranjo.h"
 #include "funcoes.h"
 
+#define MGS_ERRO "[ERRO] Não foi possível inserir valor no arranjo: "
+
 using namespace std;
 
 int main() {
@@ -45,7 +47,7 @@ int main() {
     try {
         arranjoFloat.set(15, 22.5);
     } catch (IndiceInvalido indice_invalido) {
-        cout << "Erro ao inserir valor no arranjo: " << indice_invalido.getMsg() << endl;
+        cout << MGS_ERRO << indice_invalido.getMsg() << endl;
     }
 
 
@@ -56,11 +58,11 @@ int main() {
     cout << "====== Exibindo arranjo de Aluno ======" << endl;
     turma.exibir();
 
-    cout << "[====== tentando acessar um índice inválido do arranjo de Alunos]" << endl;
+    cout << "[====== Tentando acessar um índice inválido do arranjo de Alunos]" << endl;
     try {
         turma.set(15, Aluno("Marcelo","7890"));
     } catch (IndiceInvalido indice_invalido) {
-        cout << "Erro ao inserir valor no arranjo: " << indice_invalido.getMsg() << endl;
+        cout << MGS_ERRO << indice_invalido.getMsg() << endl;
     }
 
     return 0;
