@@ -35,9 +35,6 @@ public:
     Arranjo(int tam) {
         this->tamanho = tam;
         items = new T[tamanho];
-        for (int i = 0; i < tamanho; i++) {
-            items[i] = 0;
-        }
     }
 
     virtual ~Arranjo() {

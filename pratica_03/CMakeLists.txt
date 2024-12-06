@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(pratica_03 pratica3.cpp
         funcoes.h
-        arranjo.h)
+        arranjo.h
+        aluno.h)
