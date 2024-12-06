@@ -28,7 +28,7 @@ int main() {
     arr.set(7, 15);
     arr.set(8, 22);
 
-    cout << "====== Exibindo arranjo de int ======" << endl;
+    cout << "[====== Exibindo arranjo de int ======]" << endl;
     arr.exibir();
 
     Arranjo<float> arranjoFloat(10);
@@ -37,10 +37,16 @@ int main() {
     arranjoFloat.set(7, 1.5);
     arranjoFloat.set(8, 0.00056);
 
-    cout << "====== Exibindo arranjo de float ======" << endl;
+    cout << "[====== Exibindo arranjo de float ======]" << endl;
     arranjoFloat.exibir();
 
 
+    cout << "[====== tentando acessar um índice inválido e tratando a exceção: ======]" << endl;
+    try {
+        arranjoFloat.set(15, 22.5);
+    } catch (IndiceInvalido indice_invalido) {
+        cout << "Erro ao inserir valor no arranjo: " << indice_invalido.getMsg() << endl;
+    }
 
 
     Arranjo<Aluno> turma(3);
@@ -50,10 +56,9 @@ int main() {
     cout << "====== Exibindo arranjo de Aluno ======" << endl;
     turma.exibir();
 
-
-    cout << "====== tentando acessar um índice inválido e tratando a exceção: ======" << endl;
+    cout << "[====== tentando acessar um índice inválido do arranjo de Alunos]" << endl;
     try {
-        arranjoFloat.set(15, 22.5);
+        turma.set(15, Aluno("Marcelo","7890"));
     } catch (IndiceInvalido indice_invalido) {
         cout << "Erro ao inserir valor no arranjo: " << indice_invalido.getMsg() << endl;
     }
