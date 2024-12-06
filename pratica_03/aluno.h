@@ -21,24 +21,23 @@ public:
     Aluno & operator=(const Aluno & aluno) {
         mat = aluno.mat;
         nome = aluno.nome;
-        return *this;
+        return * this;
     }
+
+    friend ostream & operator<<(ostream & out, const Aluno & aluno);
 };
 
 template<>
   void Arranjo<Aluno>::set(int idx, const Aluno & aluno) {
-    // verifique o índice como no set() default; lance exceção se preciso
-    if (idx > tamanho -1 || idx < 0) {
-        throw IndiceInvalido("Tentativa de acesso fora do intervalo.");
-    }
+    validaIndice(idx);
     this->items[idx].mat = aluno.mat;
     this->items[idx].nome = aluno.nome;
 }
 
-// ostream & Aluno::operator<<(ostream & out) {
-//     out << this->mat << " = " << this->nome << endl;
-//     return out;
-// }
+ostream & operator<<(ostream & out, const Aluno & aluno) {
+    out << aluno.mat << " = " << aluno.nome << endl;
+    return out;
+}
 
 template<>
 void Arranjo<Aluno>::exibir() {

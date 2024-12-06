@@ -26,6 +26,7 @@ class Arranjo {
 private:
     int tamanho;
     T * items;
+
     void validaIndice(int idx) {
         if (idx > tamanho -1 || idx < 0) {
             throw IndiceInvalido("Tentativa de acesso fora do intervalo.");

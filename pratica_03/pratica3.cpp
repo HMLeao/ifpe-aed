@@ -65,5 +65,8 @@ int main() {
         cout << MGS_ERRO << indice_invalido.getMsg() << endl;
     }
 
+    Aluno aluno = turma.get(1);
+    cout << aluno;
+
     return 0;
 }
