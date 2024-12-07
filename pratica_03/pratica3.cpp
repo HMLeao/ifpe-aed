@@ -9,20 +9,20 @@
 using namespace std;
 
 int main() {
-    // int x = 5, y = 10, z = 30;
+    int x = 5, y = 10, z = 30;
     // float x = 5.5, y = 10.15, z = 30.7;
     // double x = 5.5, y = 10.15, z = 30.7;
-    //
-    // cout << "Antes: x = " << x << " y = " << y << endl;
-    //
-    // funcoes::trocar(x, y);
-    //
-    // cout << "Depois : x = " << x << " y = " << y << endl;
-    // cout << "Minimo entre " << x << " e " << y << ": " << funcoes::minimo(x, y) << endl;
-    // cout << "Maximo entre " << y << " e " << z << ": " << funcoes::maximo(y, z) << endl;
-    //
-    // cout << "Minimo de \"strA\" e \"strB\": " << funcoes::minimo("strA", "strB") << endl;
-    // cout << "Maximo de \"strA\" e \"strB\": " << funcoes::maximo("strA", "strB") << endl;
+
+    cout << "Antes: x = " << x << " y = " << y << endl;
+
+    funcoes::trocar(x, y);
+
+    cout << "Depois : x = " << x << " y = " << y << endl;
+    cout << "Minimo entre " << x << " e " << y << ": " << funcoes::minimo(x, y) << endl;
+    cout << "Maximo entre " << y << " e " << z << ": " << funcoes::maximo(y, z) << endl;
+
+    cout << "Minimo de \"strA\" e \"strB\": " << funcoes::minimo("strA", "strB") << endl;
+    cout << "Maximo de \"strA\" e \"strB\": " << funcoes::maximo("strA", "strB") << endl;
 
 
     Arranjo<int> arr(10);
@@ -55,16 +55,17 @@ int main() {
     turma.set(0, Aluno("Joao","1234"));
     turma.set(1, Aluno("Maria","5235"));
     turma.set(2, Aluno("Jose","2412"));
-    cout << "====== Exibindo arranjo de Aluno ======" << endl;
+    cout << "[====== Exibindo arranjo de Aluno ======]" << endl;
     turma.exibir();
 
-    cout << "[====== Tentando acessar um índice inválido do arranjo de Alunos]" << endl;
+    cout << "[====== Tentando acessar um índice inválido do arranjo de Alunos ======]" << endl;
     try {
         turma.set(15, Aluno("Marcelo","7890"));
     } catch (IndiceInvalido indice_invalido) {
         cout << MGS_ERRO << indice_invalido.getMsg() << endl;
     }
 
+    cout << "[====== Testando sobrecarga de operador << para Aluno ======]" << endl;
     Aluno aluno = turma.get(1);
     cout << aluno;
 
